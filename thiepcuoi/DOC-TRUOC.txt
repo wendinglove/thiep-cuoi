@@ -1,0 +1,25 @@
+THIỆP CƯỚI — ĐƯA LÊN GITHUB PAGES
+
+1. Giải nén ZIP. Không tải nguyên ZIP lên GitHub.
+2. Tạo kho GitHub mới, tên ví dụ thiep-cuoi, chọn Public.
+3. Upload tất cả tệp + thư mục trong gói, rồi Commit changes.
+   index.html phải ở thư mục gốc, cùng cấp với assets và cau-hinh-thiep.js.
+4. Settings > Pages > Source: Deploy from a branch > main > /(root) > Save.
+5. Chờ triển khai xong, Pages > Visit site để lấy link.
+
+THAY NỘI DUNG / KIỂU CHỮ
+- Mở thiệp > Cá nhân hóa thiệp > chỉnh và xem thử.
+- Bấm Tải cấu hình để cập nhật GitHub.
+- Đưa tệp cau-hinh-thiep.js vừa tải lên thư mục gốc của GitHub, Commit.
+- Chỉ bấm Lưu & xem thì mới lưu trên trình duyệt của bạn.
+
+THAY ẢNH
+- Upload ảnh vào assets/photos trên GitHub.
+- Điền đường dẫn ví dụ ./assets/photos/anh-bia.jpg trong phần chỉnh sửa thiệp.
+- Tải cấu hình mới rồi đưa cau-hinh-thiep.js lên GitHub.
+
+GOOGLE SHEETS
+- Chưa được kích hoạt sẵn. Xem google-sheets/HUONG-DAN.md.
+- Thiệp vẫn xem được, nhưng chưa nhận phản hồi cho đến khi cấu hình xong.
+
+Đọc README.md trên GitHub để xem hướng dẫn chi tiết và xử lý lỗi.

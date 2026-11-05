@@ -1,0 +1,59 @@
+/* A quiet lotus pond at the edges of the invitation. */
+/* The central paper crop excludes printed clouds; separate motifs can drift. */
+body{background-size:auto,3200px auto;background-position:center,center center}
+.room{background-size:auto,320% auto;background-position:center,center center}
+.room:before{content:none}
+.hero:has(>.hero-image[src$='/assets/lotus-paper.webp']),.closing:has(>img[src$='/assets/lotus-paper.webp']){background:#fbf6e9 url('./assets/lotus-paper.webp') center center/320% auto no-repeat}
+.hero:has(>.hero-image[src$='/assets/lotus-paper.webp'])>.hero-image,.closing:has(>img[src$='/assets/lotus-paper.webp'])>img{opacity:0}
+.door{background-size:auto,320% auto;background-position:center,center center}
+body:before,body:after{content:'';position:fixed;top:-14px;width:clamp(260px,34vw,470px);height:170px;z-index:-1;pointer-events:none;background:url('./assets/auspicious-cloud.svg') center/contain no-repeat;opacity:.75;animation:cloud-drift 22s ease-in-out infinite alternate}
+body:before{left:-25px}body:after{right:-25px;scale:-1 1;animation-delay:-9s;animation-duration:27s}
+.auspicious-cloud{position:absolute;top:-5px;left:-23px;display:block;width:clamp(170px,46%,270px);height:95px;background:url('./assets/auspicious-cloud.svg') center/contain no-repeat;opacity:.68;animation:cloud-drift 19s ease-in-out infinite alternate;animation-delay:var(--lotus-phase,0s);animation-play-state:paused}
+.cloud--right{left:auto;right:-23px;scale:-1 1;animation-duration:24s;animation-direction:alternate-reverse;opacity:.55}
+.entrance .auspicious-cloud{width:clamp(185px,35vw,480px);height:clamp(90px,14vw,170px)}
+.motion-active>.lotus-scene .auspicious-cloud{animation-play-state:running}
+body.motion-suspended:before,body.motion-suspended:after,body.motion-suspended .auspicious-cloud,body.is-closed #museum .auspicious-cloud{animation-play-state:paused}
+.room .lotus-stem--left{top:auto;bottom:-12px;left:-25px;width:145px;height:198px;opacity:.64}
+@keyframes cloud-drift{0%{transform:translate3d(-13px,1px,0) rotate(-1deg)}50%{transform:translate3d(3px,6px,0) rotate(.5deg)}100%{transform:translate3d(20px,-3px,0) rotate(1deg)}}
+@media(max-width:500px){.room .lotus-stem--left{width:124px;height:169px;left:-26px;opacity:.56}.auspicious-cloud{width:190px;height:86px;top:-7px;opacity:.57}}
+@media(prefers-reduced-motion:reduce){.auspicious-cloud,body:before,body:after{animation:none!important}}
+.lotus-scene{position:absolute;inset:0;z-index:-1;overflow:hidden;contain:paint;pointer-events:none;user-select:none}
+.lotus-stem{position:absolute;display:block;width:132px;height:180px;bottom:-12px;right:-27px;opacity:.68;transform-origin:50% 100%;animation:lotus-breeze-right 8.4s ease-in-out infinite;animation-delay:var(--lotus-phase,0s);animation-play-state:paused}
+.lotus-stem img{display:block;width:100%;height:100%;object-fit:contain}
+.lotus-stem--left{width:85px;height:116px;left:-28px;right:auto;top:35px;bottom:auto;opacity:.33;animation-name:lotus-breeze-left;animation-duration:10.2s}
+.lotus-stem--left img{transform:scaleX(-1)}
+.pond-water{position:absolute;inset:auto 0 0;height:85px;overflow:hidden;opacity:.65;mask-image:linear-gradient(transparent,#000 30%);-webkit-mask-image:linear-gradient(transparent,#000 30%)}
+.water-ribbon{position:absolute;inset:0 auto 0 0;display:block;width:200%;background:url('./assets/pond-ribbons.svg') repeat-x left bottom/50% 100%;animation:pond-flow 22s linear infinite;animation-delay:var(--lotus-phase,0s);animation-play-state:paused}
+.water-ribbon--back{opacity:.38;top:8px;animation-duration:31s;animation-direction:reverse}
+.motion-active>.lotus-scene .lotus-stem,.motion-active>.lotus-scene .water-ribbon{animation-play-state:running}
+body.motion-suspended .lotus-scene .lotus-stem,body.motion-suspended .lotus-scene .water-ribbon,body.is-closed #museum .lotus-stem,body.is-closed #museum .water-ribbon{animation-play-state:paused}
+.entrance>.lotus-scene{transition:opacity .7s}.entrance.opening>.lotus-scene{opacity:0}
+.entrance .lotus-stem--left,.hero .lotus-stem--left,.closing .lotus-stem--left{top:auto;bottom:-12px;left:0;width:clamp(125px,20vw,210px);height:clamp(170px,27vw,286px);opacity:.72}
+.entrance .lotus-stem--right,.hero .lotus-stem--right,.closing .lotus-stem--right{width:clamp(120px,19vw,190px);height:clamp(164px,26vw,259px);right:-10px;opacity:.7}
+.entrance .pond-water,.hero .pond-water,.closing .pond-water{height:118px;opacity:.7}
+.hero:has(>.hero-image:not([src$='/assets/lotus-paper.webp']))>.lotus-scene,.closing:has(>img:not([src$='/assets/lotus-paper.webp']))>.lotus-scene{opacity:.6}
+@keyframes lotus-breeze-right{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-2px)}}
+@keyframes lotus-breeze-left{0%,100%{transform:rotate(3deg) translateY(-1px)}50%{transform:rotate(-3.5deg) translateY(2px)}}
+@keyframes pond-flow{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* Reveal once, preserving the existing rotated photo frames. */
+.motion-ready .motion-reveal{opacity:0;translate:0 23px;transition:opacity .85s ease,translate 1s cubic-bezier(.22,.61,.36,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .motion-reveal.is-revealed,.motion-ready .motion-reveal:focus-within{opacity:1;translate:0 0}
+.motion-ready .photo-slot{transition-duration:1.05s,1.2s}
+.motion-ready .photo-slot>img{transform:scale(1.055);transition:transform 1.8s cubic-bezier(.22,.61,.36,1),opacity .8s ease}
+.motion-ready .photo-slot.is-revealed>img{transform:scale(1)}
+.journey-stop.motion-reveal{translate:12px 14px}
+.journey-stop.motion-reveal.is-revealed{translate:0 0}
+.journey-dot{transition:background .6s,color .6s,box-shadow .8s,border-color .6s}
+.journey-stop.in-view .journey-dot{box-shadow:0 0 0 6px #eac3c62b,0 0 0 12px #ead5bd16}
+.date-room .day-heart{animation:date-heartbeat 3.2s ease-in-out infinite;animation-play-state:paused}
+.date-room.motion-active .day-heart{animation-play-state:running}
+body.motion-suspended .day-heart{animation-play-state:paused}
+.lightbox[open]{animation:photo-lightbox-in .4s cubic-bezier(.22,.61,.36,1) both}
+.lightbox[open]::backdrop{animation:photo-backdrop-in .4s ease both}
+@keyframes date-heartbeat{0%,70%,100%{transform:translateX(-50%) scale(1)}82%{transform:translateX(-50%) scale(1.28)}92%{transform:translateX(-50%) scale(1.08)}}
+@keyframes photo-lightbox-in{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes photo-backdrop-in{from{opacity:0}to{opacity:1}}
+@media(hover:hover) and (pointer:fine){.motion-ready .photo-slot.has-image:hover>img{transform:scale(1.04)}}
+@media(max-width:500px){.lotus-stem--right{width:113px;height:154px;right:-27px;opacity:.6}.lotus-stem--left{width:73px;height:100px;left:-26px;opacity:.27}.pond-water{height:74px;opacity:.58}.entrance .lotus-stem--left,.hero .lotus-stem--left,.closing .lotus-stem--left{left:-17px;width:126px;height:172px;opacity:.65}.entrance .lotus-stem--right,.hero .lotus-stem--right,.closing .lotus-stem--right{right:-20px;width:116px;height:158px;opacity:.65}.entrance .pond-water,.hero .pond-water,.closing .pond-water{height:91px}.motion-ready .motion-reveal{translate:0 17px}}
+@media(prefers-reduced-motion:reduce){.lotus-scene .lotus-stem,.lotus-scene .water-ribbon,.day-heart,.lightbox[open],.lightbox[open]::backdrop{animation:none!important}.motion-ready .motion-reveal,.motion-ready .journey-stop.motion-reveal{opacity:1;translate:none;transition:none}.motion-ready .photo-slot>img{transform:none;transition:none}}

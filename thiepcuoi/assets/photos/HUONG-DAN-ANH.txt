@@ -1,0 +1,5 @@
+Đưa ảnh cưới của bạn vào thư mục này.
+Gợi ý tên: anh-bia.jpg, co-dau.jpg, chu-re.jpg, anh-1.jpg đến anh-6.jpg.
+Sau đó điền đường dẫn ./assets/photos/anh-bia.jpg vào mục Ảnh bìa của thiệp.
+Tải cấu hình cau-hinh-thiep.js từ trình chỉnh sửa rồi đưa tệp đó lên thư mục gốc của GitHub.
+Tên ảnh phân biệt chữ HOA/chữ thường. Nên dùng tên không dấu, có gạch nối.
