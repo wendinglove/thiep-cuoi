@@ -1,0 +1,29 @@
+/* Each text role keeps its responsive size, then applies the owner's scale. */
+.museum,.entrance-content{--type-scale:var(--type-body-scale,1);--sans:var(--type-body-font,'DM Sans',Arial,sans-serif);--serif:var(--type-body-font,'Cormorant Garamond',Georgia,serif);--script:var(--type-body-font,'Great Vibes',cursive);font-family:var(--sans);font-size:calc(13px * var(--type-scale))}
+.cover-names,.hero-card h1,.portrait-frame h3,.gift-card h3,.closing-copy>[data-couple]{--type-scale:var(--type-name-scale,1);font-family:var(--type-name-font,'Great Vibes','URW Chancery L',cursive);overflow-wrap:anywhere}
+.hero-card h1{font-family:var(--type-name-font,'Cormorant Garamond',Georgia,serif)}
+.hero-card h1>i{font-family:var(--type-name-font,'Great Vibes',cursive)}
+.room-heading h2,.script-title,.audio-info h3,.invitation-ticket h3,.ceremony-info h3,.journey-stop h3,.closing-copy h2,.gallery-quote>span,.venue-block h4{--type-scale:var(--type-heading-scale,1);font-family:var(--type-heading-font,'Cormorant Garamond',Georgia,serif);overflow-wrap:anywhere}
+.script-title,.closing-copy h2{font-family:var(--type-heading-font,'Great Vibes',cursive)}
+.closing-copy h2{white-space:normal}
+body.typography-custom .entrance-content{max-height:calc(100dvh - 120px);overflow-y:auto;scrollbar-width:thin}
+body.typography-custom .cover-names{line-height:1.5}
+
+/* Keep the editing controls readable regardless of the invitation's fonts. */
+.editor-group--typography>.fields-grid{column-gap:22px;align-items:end}
+.editor-group--typography .editor-field{font-size:11px;margin-bottom:18px}
+.typography-hint{font:12px/1.8 var(--sans);color:#917e6d;margin:10px 0 0}
+.editor-field>select{display:block;width:100%;min-height:44px;margin-top:7px;border:1px solid #ddcfbd;border-radius:9px;background:#fffdf6;color:#685447;padding:9px 30px 9px 10px;font:12px/1.5 var(--sans)}
+.editor-field>input[type=range]{display:block;width:100%;height:44px;padding:0;margin:7px 0 0;border:0;background:transparent;accent-color:#b77e8b;cursor:pointer}
+.editor-field>select:focus-visible,.editor-field>input[type=range]:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.type-size-value{float:right;font:600 12px/1.5 var(--sans);color:#9e6373;font-variant-numeric:tabular-nums}
+.typography-preview{padding:19px 17px 23px;background:#fbf6e9 url('./assets/lotus-paper.webp') center/320% auto;border:1px solid #e2d5bc;border-radius:14px;text-align:center;overflow-wrap:anywhere}
+.typography-preview-label{font:9px/1.6 var(--sans);letter-spacing:1.7px;color:#a08d74}
+.typography-preview-names{font-family:var(--type-name-font,'Great Vibes',cursive);font-size:calc(38px * var(--type-name-scale,1));line-height:1.5;color:#b77e8b;margin-top:9px}
+.typography-preview-heading{font-family:var(--type-heading-font,'Cormorant Garamond',Georgia,serif);font-size:calc(24px * var(--type-heading-scale,1));line-height:1.4;color:#665440;margin-top:5px}
+.typography-preview-body{font-family:var(--type-body-font,'DM Sans',Arial,sans-serif);font-size:calc(12px * var(--type-body-scale,1));line-height:1.9;color:#8c7963;margin-top:9px}
+.typography-reset{display:block;border:0;background:none;padding:12px 0 0;color:#9b7b69;font:11px/1.6 var(--sans);text-decoration:underline;text-underline-offset:3px}
+.invitation-link-field{margin-top:17px}.invitation-link-field>input{width:100%;font:12px/1.6 var(--sans);text-overflow:ellipsis}
+@media(max-width:500px){.editor-group--typography>.fields-grid{grid-template-columns:minmax(0,1fr);gap:0}.editor-group--typography .editor-field:nth-child(even){margin-top:-11px;margin-bottom:22px}.editor-field>select{font-size:16px}.typography-preview{padding-inline:12px}.typography-preview-names{font-size:calc(33px * var(--type-name-scale,1))}}
+
+.export-config{width:100%;margin-top:14px;min-height:46px}.github-edit-note{font:11px/1.8 var(--sans);color:#9b7b69;margin:10px 0 0}
